@@ -1,407 +1,321 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Uqbar — Consultoría Estratégica para PYMEs</title>
-  <meta name="description" content="Uqbar ayuda a dueños de empresa a dejar de improvisar y construir organizaciones que crecen sin depender de una sola persona.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo1.png">
-  <link rel="apple-touch-icon" href="logo1.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uqbar — Consultoría Estratégica & Software de Gestión</title>
+<link rel="icon" type="image/png" href="logouq.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ════════════════════════
-     NAV
-════════════════════════ -->
-<nav aria-label="Navegación principal">
-  <a href="#" class="nav-logo" aria-label="Uqbar — inicio">
-    <img src="logo1.png" alt="Uqbar">
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="logouq.png" alt="Uqbar" class="nav-logo-img">
+    Uqbar<span>.</span>
   </a>
-
-  <ul class="nav-links">
-    <li><a href="#espejo">El problema</a></li>
-    <li><a href="#proceso">Cómo trabajamos</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#prueba">Resultados</a></li>
-  </ul>
-
-  <a href="#contacto" class="nav-cta">Agendar sesión</a>
-
-  <button class="nav-mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
   </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#servicios" class="nav-link-item">Servicios</a></li>
+    <li><a href="#metodologia" class="nav-link-item">Metodología</a></li>
+    <li><a href="#plataforma" class="nav-link-item">Plataforma</a></li>
+    <li><a href="#contacto" class="nav-link-item">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Agendar llamada</a>
 </nav>
 
-
-<!-- ════════════════════════
-     HERO
-════════════════════════ -->
-<section class="hero" id="inicio" aria-label="Encabezado principal">
-  <div class="hero-noise" aria-hidden="true"></div>
-  <div class="hero-orb"   aria-hidden="true"></div>
-
-  <p class="hero-eyebrow">Consultoría estratégica · Latinoamérica</p>
-
-  <h1>
-    Tu empresa crece,<br>
-    pero tú sigues <em>cargando</em><br>
-    todo solo.
-  </h1>
-
-  <p class="hero-sub">
-    Trabajamos con dueños de empresa que saben que algo no cuadra: 
-    hay movimiento, hay ventas, pero no hay claridad ni rumbo. 
-    Eso tiene solución.
-  </p>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-eyebrow">Consultoría Estratégica &amp; Software de Gestión</div>
+  <h1>El futuro de tu<br>organización, <em>diseñado</em><br>con precisión</h1>
+  <p class="hero-sub">Prospectiva estratégica, BSC, KPIs y una plataforma de gestión propia — todo en un solo lugar.</p>
   <div class="hero-actions">
-    <a href="#contacto" class="btn-primary">Quiero claridad</a>
-    <a href="#proceso"  class="btn-ghost">Ver cómo funciona</a>
+    <a href="#plataforma" class="btn-primary">Ver plataforma</a>
+    <a href="#metodologia" class="btn-ghost">Ver metodología</a>
   </div>
 </section>
 
+<!-- METODOLOGÍAS STRIP -->
+<div class="logos-strip">
+  <p class="logos-label">Metodologías y herramientas que dominamos</p>
+  <div class="logos-row">
+    <span class="logo-pill">Balanced Scorecard</span>
+    <span class="logo-pill">Benchmarking</span>
+    <span class="logo-pill">Prospectiva</span>
+    <span class="logo-pill">KPI Framework</span>
+  </div>
+</div>
 
-<!-- ════════════════════════
-     ESPEJO — síntomas
-════════════════════════ -->
-<section class="espejo" id="espejo" aria-label="Síntomas comunes">
-  <div class="espejo-inner">
-
-    <div class="espejo-heading reveal">
-      <p class="section-tag">¿Te reconoces?</p>
-      <h2>Una empresa que<br>funciona <em>a pesar</em><br>de todo.</h2>
-      <p class="espejo-lead">
-        No es falta de esfuerzo. Es que nadie te enseñó a construir 
-        una organización que funcione cuando tú no estás mirando.
-      </p>
+<!-- SERVICES -->
+<section class="services" id="servicios">
+  <div class="section-header reveal">
+    <p class="section-tag">Nuestros servicios</p>
+    <h2 class="section-h2">Estrategia que <em>trasciende</em><br>el corto plazo</h2>
+    <p class="section-sub">Combinamos visión de largo alcance con herramientas de gestión probadas para transformar organizaciones.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+      </div>
+      <h3>Prospectiva Estratégica</h3>
+      <p>Exploración de futuros posibles mediante análisis de tendencias, escenarios y señales débiles para decisiones robustas.</p>
+      <span class="service-tag">Futurismo</span>
     </div>
-
-    <div class="sintomas-list">
-
-      <div class="sintoma reveal reveal-delay-1">
-        <span class="sintoma-num">01</span>
-        <div class="sintoma-body">
-          <h4>Eres el cuello de botella de todo</h4>
-          <p>Las decisiones pasan por ti, los clientes te llaman a ti, 
-          los problemas llegan a ti. Si te vas tres días, algo se rompe.</p>
-        </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
       </div>
-
-      <div class="sintoma reveal reveal-delay-2">
-        <span class="sintoma-num">02</span>
-        <div class="sintoma-body">
-          <h4>El equipo trabaja duro, pero sin norte</h4>
-          <p>Hay personas competentes, pero cada una jala para un lado. 
-          No hay un objetivo compartido que todos puedan nombrar de memoria.</p>
-        </div>
+      <h3>Balanced Scorecard</h3>
+      <p>Diseño e implementación de cuadros de mando integral alineados con la visión, perspectivas y objetivos estratégicos.</p>
+      <span class="service-tag">BSC</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
-
-      <div class="sintoma reveal reveal-delay-3">
-        <span class="sintoma-num">03</span>
-        <div class="sintoma-body">
-          <h4>Sabes que hay plata, pero no sabes dónde va</h4>
-          <p>Vendes, facturar, y aun así el mes cierra justo. 
-          Los clientes que más te piden son los que peor pagan.</p>
-        </div>
+      <h3>KPIs &amp; Métricas</h3>
+      <p>Definición de indicadores clave de desempeño con metodología SMART, dashboards y sistemas de seguimiento continuo.</p>
+      <span class="service-tag">Medición</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
-
-      <div class="sintoma reveal">
-        <span class="sintoma-num">04</span>
-        <div class="sintoma-body">
-          <h4>Tomas decisiones con el estómago, no con datos</h4>
-          <p>No tienes un tablero que te diga si vas bien o mal. 
-          La estrategia existe en tu cabeza, pero no en ningún otro lugar.</p>
-        </div>
-      </div>
-
-      <div class="sintoma reveal">
-        <span class="sintoma-num">05</span>
-        <div class="sintoma-body">
-          <h4>No sabes qué viene en cinco años</h4>
-          <p>El entorno cambia, la competencia se mueve, y tú reaccionas 
-          en lugar de anticipar. La incertidumbre paraliza más que activa.</p>
-        </div>
-      </div>
-
+      <h3>Benchmarking</h3>
+      <p>Análisis comparativo con referentes del sector para identificar brechas, mejores prácticas y oportunidades de mejora.</p>
+      <span class="service-tag">Análisis</span>
     </div>
   </div>
 </section>
 
-
-<!-- ════════════════════════
-     PROCESO — 3 pasos
-════════════════════════ -->
-<section class="proceso" id="proceso" aria-label="Cómo trabajamos">
-  <div class="proceso-header reveal">
-    <p class="section-tag">Cómo trabajamos</p>
-    <h2>Sin metodología visible.<br>Solo <em>resultados</em> concretos.</h2>
-    <p>
-      No te enseñamos marcos teóricos ni te entregamos un manual de 200 páginas. 
-      Construimos contigo los instrumentos que tu empresa necesita para moverse con intención.
-    </p>
-  </div>
-
-  <div class="pasos-grid">
-
-    <div class="paso reveal">
-      <p class="paso-num">01</p>
-      <h3>Entendemos tu empresa por dentro</h3>
-      <p>
-        Antes de proponer nada, escuchamos. Mapeamos cómo tomas decisiones hoy, 
-        qué información usas, qué conversaciones no estás teniendo, 
-        y dónde se pierde energía sin que nadie lo note.
-      </p>
-      <span class="paso-tag">Diagnóstico</span>
-    </div>
-
-    <div class="paso reveal reveal-delay-1">
-      <p class="paso-num">02</p>
-      <h3>Construimos la arquitectura de tu estrategia</h3>
-      <p>
-        Definimos a dónde vas, qué indica que vas bien, y quién es responsable de qué. 
-        Tu empresa deja de depender de tu memoria y empieza a tener estructura propia. 
-        El rumbo queda escrito, visible y medible.
-      </p>
-      <span class="paso-tag">Diseño</span>
-    </div>
-
-    <div class="paso reveal reveal-delay-2">
-      <p class="paso-num">03</p>
-      <h3>Acompañamos la ejecución mes a mes</h3>
-      <p>
-        No desaparecemos después de la entrega. Revisamos contigo los números, 
-        ajustamos lo que no funciona y te ayudamos a anticipar lo que viene. 
-        La estrategia es viva, no un documento en un cajón.
-      </p>
-      <span class="paso-tag">Seguimiento</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ════════════════════════
-     SERVICIOS
-════════════════════════ -->
-<section class="servicios" id="servicios" aria-label="Servicios">
-  <div class="servicios-header reveal">
-    <p class="section-tag">Servicios</p>
-    <h2>Tres frentes.<br>Un solo <em>propósito.</em></h2>
-    <p>
-      Cada servicio resuelve un problema real de dirección, 
-      visión o presencia. Pueden contratarse por separado 
-      o como un sistema integrado.
-    </p>
-  </div>
-
-  <div class="servicios-grid">
-
-    <!-- Dirección estratégica (BSC sin nombrarlo) -->
-    <div class="servicio-card reveal">
-      <div class="servicio-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="3"/>
-          <path d="M12 2v3m0 14v3M2 12h3m14 0h3"/>
-          <path d="M4.93 4.93l2.12 2.12m9.9 9.9 2.12 2.12M4.93 19.07l2.12-2.12m9.9-9.9 2.12-2.12"/>
-        </svg>
-      </div>
-      <h3>Dirección con brújula</h3>
-      <p>
-        Construimos el sistema de gestión que convierte tu visión en objetivos medibles, 
-        indicadores accionables y conversaciones de equipo que avanzan. 
-        Tu empresa sabrá si va en la dirección correcta sin que tengas que preguntarlo.
-      </p>
-      <span class="servicio-pill">Estrategia</span>
-    </div>
-
-    <!-- Prospectiva Godet sin nombrarlo -->
-    <div class="servicio-card reveal reveal-delay-1">
-      <div class="servicio-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <path d="M2 12 C2 6.48 6.48 2 12 2"/>
-          <path d="M12 2 C17.52 2 22 6.48 22 12"/>
-          <path d="M22 12 C22 17.52 17.52 22 12 22"/>
-          <path d="M12 22 C6.48 22 2 17.52 2 12"/>
-          <path d="M12 8v4l3 3"/>
-        </svg>
-      </div>
-      <h3>Inteligencia del futuro</h3>
-      <p>
-        Estudiamos las fuerzas que van a mover tu sector en los próximos años, 
-        construimos escenarios posibles y te ayudamos a elegir cómo posicionarte 
-        antes de que el cambio llegue. Anticipar es más barato que reaccionar.
-      </p>
-      <span class="servicio-pill">Prospectiva</span>
-    </div>
-
-    <!-- Web + gestión administrativa -->
-    <div class="servicio-card reveal reveal-delay-2">
-      <div class="servicio-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24">
-          <rect x="2" y="3" width="20" height="14" rx="2"/>
-          <path d="M8 21h8m-4-4v4"/>
-        </svg>
-      </div>
-      <h3>Presencia digital y operación</h3>
-      <p>
-        Diseñamos y construimos tu presencia web con la misma exigencia estética 
-        que aplicamos a la estrategia. Y si lo necesitas, gestionamos tus procesos 
-        administrativos recurrentes para que puedas enfocarte en lo que importa.
-      </p>
-      <span class="servicio-pill">Digital · Ops</span>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ════════════════════════
-     PRUEBA SOCIAL
-════════════════════════ -->
-<section class="prueba" id="prueba" aria-label="Resultados de clientes">
-  <div class="prueba-inner">
-
-    <div class="prueba-quote reveal">
-      <span class="quote-ornament" aria-hidden="true">"</span>
-      <blockquote>
-        Teníamos años tomando decisiones a ciegas. Seis meses después 
-        de trabajar con Uqbar, por primera vez sé exactamente 
-        qué está funcionando, qué no, y qué viene.
-      </blockquote>
-      <div class="quote-attribution">
-        <div class="quote-avatar" aria-hidden="true">DR</div>
-        <div class="quote-meta">
-          <p><strong>Director General</strong></p>
-          <p>Empresa de servicios · Bogotá — cliente desde 2023</p>
+<!-- APPROACH -->
+<section class="approach" id="metodologia">
+  <div class="approach-inner">
+    <div class="reveal">
+      <p class="section-tag" style="color:var(--violet-600);">Nuestra metodología</p>
+      <h2 class="section-h2 dark" style="margin-bottom:0.5rem">Del diagnóstico<br>a la <em>transformación</em></h2>
+      <p class="section-sub dark" style="margin-bottom:2rem;">Un proceso estructurado en cuatro fases que garantiza resultados medibles y sostenibles.</p>
+      <div class="approach-steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-text">
+            <h4>Diagnóstico estratégico</h4>
+            <p>Análisis profundo del entorno, capacidades internas y brechas entre el estado actual y el deseado.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-text">
+            <h4>Diseño de la arquitectura</h4>
+            <p>Construcción del BSC, definición de perspectivas, objetivos e indicadores alineados a la estrategia.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-text">
+            <h4>Implementación y formación</h4>
+            <p>Despliegue de herramientas, capacitación de equipos y activación de dashboards de seguimiento.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-text">
+            <h4>Monitoreo y optimización</h4>
+            <p>Revisión periódica de KPIs, ajustes estratégicos y benchmarking continuo con el sector.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="metricas-grid reveal reveal-delay-1" aria-label="Métricas del cliente">
-
-      <div class="metrica">
-        <div class="metrica-valor">+38<em>%</em></div>
-        <div class="metrica-label">Crecimiento en ingresos<br>primer año</div>
+    <!-- Approach visual: browser mock showing dashboard -->
+    <div class="approach-visual reveal">
+      <div class="browser-bar-mini">
+        <div class="b-dot" style="background:#ff5f56"></div>
+        <div class="b-dot" style="background:#ffbd2e"></div>
+        <div class="b-dot" style="background:#27c93f"></div>
+        <div class="browser-url-mini">app.uqbar.co/dashboard</div>
       </div>
-
-      <div class="metrica">
-        <div class="metrica-valor">4<em>→1</em></div>
-        <div class="metrica-label">Reuniones semanales<br>reducidas a una</div>
+      <div class="dash-preview">
+        <div class="dash-header-row">
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-label">Objetivos activos</div>
+            <div class="dash-kpi-val">12</div>
+          </div>
+          <div class="dash-kpi-card accent">
+            <div class="dash-kpi-label">Alertas pendientes</div>
+            <div class="dash-kpi-val">3</div>
+          </div>
+          <div class="dash-kpi-card">
+            <div class="dash-kpi-label">Usuarios</div>
+            <div class="dash-kpi-val">—</div>
+          </div>
+        </div>
+        <div class="dash-bar-section">
+          <div class="dash-bar-row">
+            <span class="dash-bar-label">Perspectiva Financiera</span>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="--w:72%"></div></div>
+          </div>
+          <div class="dash-bar-row">
+            <span class="dash-bar-label">Clientes</span>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="--w:88%"></div></div>
+          </div>
+          <div class="dash-bar-row">
+            <span class="dash-bar-label">Procesos Internos</span>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="--w:55%"></div></div>
+          </div>
+          <div class="dash-bar-row">
+            <span class="dash-bar-label">Aprendizaje</span>
+            <div class="dash-bar-track"><div class="dash-bar-fill" style="--w:64%"></div></div>
+          </div>
+        </div>
       </div>
-
-      <div class="metrica">
-        <div class="metrica-valor">100<em>%</em></div>
-        <div class="metrica-label">Equipo alineado a<br>objetivos anuales</div>
-      </div>
-
-      <div class="metrica">
-        <div class="metrica-valor">6<em>m</em></div>
-        <div class="metrica-label">Tiempo al primer<br>impacto medible</div>
-      </div>
-
     </div>
   </div>
 </section>
 
+<!-- PLATAFORMA (replaces stats + webdesign) -->
+<section class="plataforma" id="plataforma">
+  <div class="section-header reveal">
+    <p class="section-tag">Uqbar Platform</p>
+    <h2 class="section-h2">Qué podemos <em>construir</em><br>para tu negocio</h2>
+    <p class="section-sub">Uqbar no es solo consultoría — es un software de gestión simple, potente y adaptable a la estructura real de tu organización.</p>
+  </div>
+  <div class="platform-grid reveal">
 
-<!-- ════════════════════════
-     CTA / CONTACTO
-════════════════════════ -->
-<section class="cta-section" id="contacto" aria-label="Contacto">
+    <div class="platform-card platform-card--featured">
+      <div class="platform-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8h2v5H7zM11 6h2v7h-2zM15 10h2v3h-2z"/></svg>
+      </div>
+      <div class="platform-card-badge">Core</div>
+      <h3>Dashboards de gestión</h3>
+      <p>Tableros de control en tiempo real para BSC, KPIs y objetivos estratégicos. Visualiza el estado de tu organización en una sola pantalla — sin hojas de cálculo, sin caos.</p>
+      <ul class="platform-features">
+        <li>BSC con perspectivas personalizables</li>
+        <li>KPIs con semáforos y alertas automáticas</li>
+        <li>Gráficas de tendencia y comparativas</li>
+        <li>Exportación a PDF y reportes programados</li>
+      </ul>
+    </div>
+
+    <div class="platform-card platform-card--featured">
+      <div class="platform-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="platform-card-badge">Core</div>
+      <h3>Multitenant</h3>
+      <p>Arquitectura diseñada para gestionar múltiples clientes, unidades de negocio o franquicias desde una sola plataforma. Cada tenant tiene su propio espacio, datos y configuración.</p>
+      <ul class="platform-features">
+        <li>Aislamiento total de datos por tenant</li>
+        <li>Roles y permisos granulares</li>
+        <li>Panel de administración centralizado</li>
+        <li>Escalable desde 1 hasta N organizaciones</li>
+      </ul>
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <h3>Automatizaciones</h3>
+      <p>Flujos automáticos que eliminan tareas repetitivas: notificaciones, actualizaciones de indicadores, reportes periódicos y alertas basadas en umbrales.</p>
+      <ul class="platform-features">
+        <li>Triggers por umbral de KPI</li>
+        <li>Notificaciones vía email o webhook</li>
+        <li>Actualización automática de datos</li>
+      </ul>
+    </div>
+
+    <div class="platform-card">
+      <div class="platform-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h3>Integraciones con pagos</h3>
+      <p>Conecta tu plataforma con pasarelas de pago para suscripciones, facturación recurrente y gestión financiera integrada al dashboard de gestión.</p>
+      <ul class="platform-features">
+        <li>Stripe, PayU y PSE</li>
+        <li>Suscripciones y cobros recurrentes</li>
+        <li>Conciliación automática</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="testimonial-inner reveal">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Uqbar transformó nuestra manera de tomar decisiones. El dashboard que implementaron no es solo un tablero — es la columna vertebral de nuestra gestión estratégica.</p>
+    <div class="quote-author">
+      <div class="author-avatar">CR</div>
+      <div class="author-info">
+        <p class="author-name">Camila Reyes</p>
+        <p class="author-role">Directora de Planeación, Grupo Andino</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
   <div class="cta-inner reveal">
-    <p class="section-tag" style="justify-content:center; margin-bottom:1.8rem;">Primer paso</p>
-    <h2>Una conversación.<br>Sin <em>compromiso.</em></h2>
-    <p>
-      Agenda una sesión de diagnóstico gratuita de 45 minutos. 
-      Entendemos tu empresa antes de proponer cualquier cosa. 
-      Si no vemos cómo ayudarte, te lo decimos.
-    </p>
-
-    <form class="cta-form" novalidate>
-      <input
-        type="email"
-        name="email"
-        placeholder="tu@empresa.com"
-        autocomplete="email"
-        aria-label="Correo electrónico"
-        required
-      >
-      <button type="submit">Agendar sesión</button>
-    </form>
-
-    <p class="cta-success" role="status">
-      ✓ Redirigiendo a tu cliente de correo…
-    </p>
-
-    <p class="cta-email-direct">
-      O escríbenos directo: <a href="mailto:hola@uqbar.app">hola@uqbar.app</a>
-    </p>
+    <h2>Hagamos algo<br><em>extraordinario</em> juntos</h2>
+    <p>Déjanos tu correo y agendamos una sesión de diagnóstico sin costo. Entendemos tu organización antes de proponer cualquier solución.</p>
+    <div class="cta-form">
+      <input type="email" placeholder="tu@empresa.com" id="cta-email">
+      <button class="btn-primary-light" id="cta-btn">Agendar sesión</button>
+    </div>
+    <p class="cta-feedback" id="cta-feedback"></p>
   </div>
 </section>
 
-
-<!-- ════════════════════════
-     FOOTER
-════════════════════════ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-
     <div class="footer-brand">
-      <img src="logo1.png" alt="Uqbar">
-      <p>
-        Consultoría estratégica para dueños de empresa que quieren 
-        dejar de improvisar y construir algo que dure.
-      </p>
+      <div class="nav-logo footer-logo">
+        <img src="logouq.png" alt="Uqbar" class="nav-logo-img">
+        Uqbar<span>.</span>
+      </div>
+      <p>Software de gestión estratégica y consultoría para organizaciones que quieren liderar el futuro.</p>
     </div>
-
     <div class="footer-col">
       <h5>Servicios</h5>
       <ul>
-        <li><a href="#servicios">Dirección estratégica</a></li>
-        <li><a href="#servicios">Inteligencia del futuro</a></li>
-        <li><a href="#servicios">Presencia digital</a></li>
-        <li><a href="#servicios">Gestión administrativa</a></li>
+        <li><a href="#servicios">Prospectiva</a></li>
+        <li><a href="#servicios">BSC</a></li>
+        <li><a href="#servicios">KPIs</a></li>
+        <li><a href="#servicios">Benchmarking</a></li>
       </ul>
     </div>
-
+    <div class="footer-col">
+      <h5>Plataforma</h5>
+      <ul>
+        <li><a href="#plataforma">Dashboards</a></li>
+        <li><a href="#plataforma">Multitenant</a></li>
+        <li><a href="#plataforma">Automatizaciones</a></li>
+        <li><a href="#plataforma">Integraciones</a></li>
+      </ul>
+    </div>
     <div class="footer-col">
       <h5>Empresa</h5>
       <ul>
-        <li><a href="#proceso">Cómo trabajamos</a></li>
-        <li><a href="#prueba">Resultados</a></li>
-        <li><a href="#espejo">El problema</a></li>
+        <li><a href="#metodologia">Metodología</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
-
-    <div class="footer-col">
-      <h5>Contacto</h5>
-      <ul>
-        <li><a href="mailto:hola@uqbar.app">hola@uqbar.app</a></li>
-        <li><a href="#contacto">Agendar sesión</a></li>
-      </ul>
-    </div>
-
   </div>
-
   <div class="footer-bottom">
-    <span>© 2025 Uqbar &nbsp;·&nbsp; Todos los derechos reservados</span>
+    <span>© 2026 Uqbar <span class="footer-dot">·</span> Todos los derechos reservados</span>
     <span>Bogotá, Colombia</span>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="script.js"></script>
 </body>
 </html>
