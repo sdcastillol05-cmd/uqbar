@@ -1,0 +1,41 @@
+/* ═══ V4 · SEMILLA → DIENTE DE LEÓN (animación ligada al scroll) ═══════════════
+   Solo se activa con <body data-planta="on"> (ver planta.js).
+   Ajustes rápidos: tamaño (width), posición (right / bottom) y opacidad. */
+
+.planta {
+  position: fixed;
+  right: max(1.2vw, 8px);
+  bottom: 0;
+  width: clamp(170px, 18vw, 270px);
+  z-index: 1;                       /* detrás del contenido (que sube a z-index 2), delante de los fondos */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .8s ease;
+  will-change: opacity;
+}
+.planta.ready            { opacity: .85; }
+.planta.ready.on-light   { opacity: .7; }   /* secciones claras: un poco más suave */
+
+.planta canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 55vh;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+/* El contenido de cada sección queda POR ENCIMA de la planta (sin alterar el layout) */
+body[data-planta="on"] :is(.services, .sec, .cta-section, footer) > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Móvil: más pequeña y más tenue para no competir con el texto */
+@media (max-width: 768px) {
+  .planta { right: 0; width: clamp(120px, 30vw, 160px); }
+  .planta.ready          { opacity: .55; }
+  .planta.ready.on-light { opacity: .42; }
+  .planta canvas { max-height: 38vh; }
+}
+@media (prefers-reduced-motion: reduce) { .planta { transition: none; } }
