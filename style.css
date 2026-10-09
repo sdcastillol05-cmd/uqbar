@@ -868,3 +868,16 @@ a { -webkit-tap-highlight-color: transparent; }
   .nav-mobile-cta { display: block; } .nav-mobile-cta a { color: var(--violet-300) !important; }
   .race-row { grid-template-columns: 1fr; gap: .4rem; } .kpi-row { grid-template-columns: 1fr 1fr; } .kpi-row .dash-kpi-card:last-child { display: none; }
 }
+
+/* ═══ V3 · HILO (prueba visual) ═══════════════════════════════════════════════
+   Hilo SVG dentro del .hero que se desenreda con el scroll (ver script.js).
+   Desactivar en una página: <body data-hilo="off"> */
+.hilo { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hilo svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hilo path {
+  fill: none; stroke: rgba(248,247,244,.5); stroke-width: 1.1;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+/* El contenido del hero queda por encima del hilo (sin alterar el layout) */
+.hero > *:not(.hilo):not(.hero-glow) { position: relative; z-index: 1; }
+@media (max-width: 768px) { .hilo path { stroke-width: 1; stroke: rgba(248,247,244,.42); } }
