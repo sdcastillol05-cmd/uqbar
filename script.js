@@ -8,85 +8,83 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal, .journey, .line-draw').forEach(el => revealObserver.observe(el));
 
 /* ── Navbar scroll tint ────────────────────────────────────────────────────── */
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+if (navbar) {
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
 
 /* ── Mobile hamburger menu ─────────────────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
-  hamburger.classList.toggle('open', isOpen);
-  hamburger.setAttribute('aria-expanded', isOpen);
-  // prevent body scroll when menu is open
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
+function closeMenu() {
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', false);
+  document.body.style.overflow = '';
+}
 
-// Close menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-    document.body.style.overflow = '';
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-});
-
-// Close on outside click
-document.addEventListener('click', (e) => {
-  if (navLinks.classList.contains('open') &&
-      !navLinks.contains(e.target) &&
-      !hamburger.contains(e.target)) {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', false);
-    document.body.style.overflow = '';
-  }
-});
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !hamburger.contains(e.target)) closeMenu();
+  });
+}
 
 /* ── CTA email form ────────────────────────────────────────────────────────── */
 const ctaBtn      = document.getElementById('cta-btn');
 const ctaEmail    = document.getElementById('cta-email');
 const ctaFeedback = document.getElementById('cta-feedback');
 
-ctaBtn.addEventListener('click', () => {
-  const email = ctaEmail.value.trim();
-  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+if (ctaBtn && ctaEmail && ctaFeedback) {
+  ctaBtn.addEventListener('click', () => {
+    const email = ctaEmail.value.trim();
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  if (!valid) {
-    ctaFeedback.textContent = 'Por favor ingresa un correo válido.';
-    ctaFeedback.style.color = '#e57373';
-    ctaEmail.focus();
-    return;
-  }
+    if (!valid) {
+      ctaFeedback.textContent = 'Por favor ingresa un correo válido.';
+      ctaFeedback.style.color = '#e57373';
+      ctaEmail.focus();
+      return;
+    }
 
-  // Simulate submission
-  ctaBtn.disabled = true;
-  ctaBtn.textContent = 'Enviando…';
+    // Simulate submission
+    ctaBtn.disabled = true;
+    ctaBtn.textContent = 'Enviando…';
 
-  setTimeout(() => {
-    ctaFeedback.textContent = '¡Listo! Te contactamos pronto.';
-    ctaFeedback.style.color = 'var(--violet-600)';
-    ctaEmail.value = '';
-    ctaBtn.textContent = 'Enviado ✓';
-    ctaBtn.style.background = '#4a2fa8';
-  }, 900);
-});
+    setTimeout(() => {
+      ctaFeedback.textContent = '¡Listo! Te contactamos pronto.';
+      ctaFeedback.style.color = 'var(--violet-600)';
+      ctaEmail.value = '';
+      ctaBtn.textContent = 'Enviado ✓';
+      ctaBtn.style.background = '#4a2fa8';
+    }, 900);
+  });
 
-ctaEmail.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') ctaBtn.click();
-});
+  ctaEmail.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') ctaBtn.click();
+  });
+}
 
 /* ── Smooth anchor scroll (offset for fixed nav) ───────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', (e) => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+    const id = anchor.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
     if (!target) return;
     e.preventDefault();
     const offset = parseInt(getComputedStyle(document.documentElement)
@@ -95,3 +93,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });
+
+/* ── Puntero circular (solo escritorio con mouse) ──────────────────────────── */
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor';
+  cursor.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(cursor);
+  document.body.classList.add('has-cursor');
+
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    cursor.classList.add('on');
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => cursor.classList.remove('on'));
+  document.addEventListener('mousedown', () => cursor.classList.add('down'));
+  document.addEventListener('mouseup',   () => cursor.classList.remove('down'));
+
+  document.addEventListener('mouseover', (e) => {
+    cursor.classList.toggle('hover', !!e.target.closest('a, button, input, .route'));
+  });
+
+  (function loop() {
+    cx += (mx - cx) * (still ? 1 : 0.2);
+    cy += (my - cy) * (still ? 1 : 0.2);
+    cursor.style.transform = `translate(${cx}px, ${cy}px)`;
+    requestAnimationFrame(loop);
+  })();
+}
